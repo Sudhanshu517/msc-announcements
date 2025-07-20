@@ -16,12 +16,18 @@ function Shell() {
         </h1>
 
         {loading ? (
-          <p className="text-center text-gray-500">Loading...</p>
-        ) : user ? (
-          <AnnouncementsBoard />
-        ) : (
-          <Login />
-        )}
+  <p className="text-center text-gray-500">Loading...</p>
+) : user ? (
+  <>
+    <p className="text-center text-gray-600 mb-3">
+      Welcome, <span className="font-semibold">{user.displayName}</span> 👋
+    </p>
+    <AnnouncementsBoard />
+  </>
+) : (
+  <Login />
+)}
+
       </div>
     </div>
   );
